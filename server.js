@@ -3,7 +3,6 @@
 var ws = require('ws');;
 
 // configuration files
-var configServer = require('./lib/config/server');
 
 // app parameters
 
@@ -18,8 +17,8 @@ var width = 320;
 var height = 240;
 
 // WebSocket server
-var wsServer = new (ws.Server)({ port: configServer.wsPort });
-console.log('WebSocket server listening on port ' + configServer.wsPort);
+var wsServer = new (ws.Server)({ port: 8084 });
+console.log('WebSocket server listening on port 8084');
 
 wsServer.on('connection', function(socket) {
   // Send magic bytes and video size to the newly connected socket
